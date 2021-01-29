@@ -20,12 +20,12 @@ def write_to_file(data):
 		message=data["message"]
 		file=database.write(f'\n{email},{subject},{message}')
 
-def write_to_csv():
-	with open('database.csv', mode='a') as database2:
+def write_to_csv(data):
+	with open('database.csv', newline='', mode='a') as database2:
 		email=data["email"]
 		subject=data["subject"]
 		message=data["message"]
-		csv_writer=csv.writer(database2,delimiter=',',quotechar='"',newline='' quoting=csv.QUOTE_MINIMAL)
+		csv_writer=csv.writer(database2,delimiter=',',quotechar='"',quoting=csv.QUOTE_MINIMAL)
 		csv_writer.writerow([email,subject,message])
 			
 
